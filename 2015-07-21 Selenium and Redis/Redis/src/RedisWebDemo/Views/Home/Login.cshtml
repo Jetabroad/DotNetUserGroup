@@ -1,0 +1,26 @@
+﻿@model RedisWebDemo.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title.</title>
+    </head>
+    <body>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Loging Form</legend>
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.Id)
+                    @Html.TextBoxFor(m => m.Id)
+                </li>
+            </ol>
+            <input type="submit" value="Login" />
+        </fieldset>
+    }
+    </body>
+</html>
