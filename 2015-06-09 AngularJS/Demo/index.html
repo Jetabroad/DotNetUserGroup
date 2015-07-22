@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Demo</title>
+    <script src="lib\angular.min.js"></script>
+    <script>
+        var app = angular.module("app", []);
+        app.directive('disallow', function() {
+            return {
+                restrict: 'A',
+                transclude: true,
+                template: "<fieldset style='border:none' ng-transclude></fieldset>",
+                link: function($scope, element, attrs) {
+                    var fields = element.find('fieldset');
+                    element.on("keyup", function(e) {
+                        if(e.target.value === attrs.disallow) {
+                            fields.attr('disabled','disabled');
+                        }
+                    });
+                }
+            };
+        });
+        app.service('favoritesService', function($log) {
+            $log.info("initializing favorites service");
+            var favorites = [];
+            this.addFavorite = function(favorite) {
+                if(favorite === "Cobol") {
+                    throw "Cobol cannot be a favorite";
+                }
+                favorites.push(favorite);
+            };
+            this.getFavorites = function() {
+                return favorites;
+            };
+        });
+        app.controller("AppController", function($scope, $log, favoritesService) {
+            $scope.title = "Hello .NET Users Group!";
+            $scope.favorites = favoritesService.getFavorites();
+            $scope.addFavorite = function() {
+                try {
+                    favoritesService.addFavorite($scope.myFavorite);
+                }
+                catch(err) {
+                    $log.error(err);
+                }
+                $scope.myFavorite = '';
+                $scope.title += "!";
+            };
+        });
+    </script>
+    <link rel="stylesheet" href="lib\animate.css">
+</head>
+<body ng-app="app" ng-controller="AppController">
+    <h1>{{title}}</h1>
+    <ol>
+        <li ng-repeat="fav in favorites" class='animated bounceInLeft'>{{fav}}</li>
+    </ol>
+    <form ng-submit="addFavorite()" disallow="Cobol">
+        <input type="text" ng-model="myFavorite" />
+        <input type="submit" value="Add your favorite!" />
+    </form>
+</body>
+</html>

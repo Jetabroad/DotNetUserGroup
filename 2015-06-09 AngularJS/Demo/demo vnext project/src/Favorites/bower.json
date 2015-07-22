@@ -1,0 +1,10 @@
+{
+  "name": "Favorites",
+  "private": true,
+  "dependencies": {
+    "jQuery": "2.1.4",
+    "angular": "1.4.0",
+    "angular-new-router": "0.5.3",
+    "angular-resource": "1.4.0"
+  }
+}
