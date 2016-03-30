@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Scientist</name>
+    </assembly>
+    <members>
+        <member name="T:GitHub.Internals.IExperiment`1">
+            <summary>
+            Provides an interface for defining a synchronous experiment.
+            </summary>
+            <typeparam name="T">The return result for the experiment.</typeparam>
+        </member>
+        <member name="M:GitHub.Internals.IExperiment`1.BeforeRun(System.Action)">
+            <summary>
+            Define any expensive setup here before the experiment is run.
+            </summary>
+        </member>
+        <member name="M:GitHub.Internals.IExperiment`1.RunIf(System.Func{System.Boolean})">
+            <summary>
+            Defines the check to run to determine if the experiment should run.
+            </summary>
+            <param name="check">The delegate to evaluate.</param>
+        </member>
+        <member name="M:GitHub.Internals.IExperiment`1.Try(System.Func{`0})">
+            <summary>
+            Defines the operation to try.
+            </summary>
+            <param name="candidate">The delegate to execute.</param>
+        </member>
+        <member name="M:GitHub.Internals.IExperiment`1.Try(System.String,System.Func{`0})">
+            <summary>
+            Defines the operation to try.
+            </summary>
+            <param name="name"></param>
+            <param name="candidate">The delegate to execute.</param>
+        </member>
+        <member name="M:GitHub.Internals.IExperiment`1.Use(System.Func{`0})">
+            <summary>
+            Defines the operation to actually use.
+            </summary>
+            <param name="control">The delegate to execute.</param>
+        </member>
+        <member name="M:GitHub.Internals.IExperiment`1.Compare(System.Func{`0,`0,System.Boolean})">
+            <summary>
+            Defines a custom func used to compare results.
+            </summary>
+        </member>
+        <member name="M:GitHub.Internals.IExperiment`1.Ignore(System.Func{`0,`0,System.Boolean})">
+            <summary>
+            Defines the check to run to determine if mismatches should be ignored.
+            </summary>
+            <param name="block">The delegate to execute</param>
+        </member>
+        <member name="T:GitHub.Internals.IExperimentAsync`1">
+            <summary>
+            Provides an interface for defining an asynchronous experiment.
+            </summary>
+            <typeparam name="T">The return result for the experiment.</typeparam>
+        </member>
+        <member name="M:GitHub.Internals.IExperimentAsync`1.BeforeRun(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Define any expensive setup here before the experiment is run.
+            </summary>
+        </member>
+        <member name="M:GitHub.Internals.IExperimentAsync`1.RunIf(System.Func{System.Threading.Tasks.Task{System.Boolean}})">
+            <summary>
+            Defines the check to run to determine if the experiment should run.
+            </summary>
+            <param name="check">The delegate to evaluate.</param>
+        </member>
+        <member name="M:GitHub.Internals.IExperimentAsync`1.Try(System.Func{System.Threading.Tasks.Task{`0}})">
+            <summary>
+            Defines the operation to try.
+            </summary>
+            <param name="candidate">The delegate to execute.</param>
+        </member>
+        <member name="M:GitHub.Internals.IExperimentAsync`1.Try(System.String,System.Func{System.Threading.Tasks.Task{`0}})">
+            <summary>
+            Defines the operation to try.
+            </summary>
+            <param name="name"></param>
+            <param name="candidate">The delegate to execute.</param>
+        </member>
+        <member name="M:GitHub.Internals.IExperimentAsync`1.Use(System.Func{System.Threading.Tasks.Task{`0}})">
+            <summary>
+            Defines the operation to actually use.
+            </summary>
+            <param name="control">The delegate to execute.</param>
+        </member>
+        <member name="M:GitHub.Internals.IExperimentAsync`1.Compare(System.Func{`0,`0,System.Boolean})">
+            <summary>
+            Defines a func used to compare results.
+            </summary>
+        </member>
+        <member name="M:GitHub.Internals.IExperimentAsync`1.Ignore(System.Func{`0,`0,System.Threading.Tasks.Task{System.Boolean}})">
+            <summary>
+            Defines the check to run to determine if mismatches should be ignored.
+            </summary>
+            <param name="block">The delegate to execute</param>
+        </member>
+        <member name="T:GitHub.Internals.ExperimentInstance`1">
+            <summary>
+            An instance of an experiment. This actually runs the control and the candidate and measures the result.
+            </summary>
+            <typeparam name="T">The return type of the experiment</typeparam>
+        </member>
+        <member name="P:GitHub.Internals.ExperimentInstance`1.NamedBehavior.Behavior">
+            <summary>
+            Gets the behavior to execute during an experiment.
+            </summary>
+        </member>
+        <member name="P:GitHub.Internals.ExperimentInstance`1.NamedBehavior.Name">
+            <summary>
+            Gets the name of the behavior.
+            </summary>
+        </member>
+        <member name="M:GitHub.Internals.InMemoryResultPublisher.Results``1">
+            <summary>
+            Gets the results of a specific type from the publisher.
+            </summary>
+            <typeparam name="T">The type of result to get.</typeparam>
+            <returns>All results that have the type provided, and have been published.</returns>
+        </member>
+        <member name="T:GitHub.IResultPublisher">
+            <summary>
+            Provides an interface for publishing experiment results.
+            </summary>
+        </member>
+        <member name="M:GitHub.IResultPublisher.Publish``1(GitHub.Result{``0})">
+            <summary>
+            Publishes the results of an experiment.
+            </summary>
+            <typeparam name="T">The type of result being published from an experiment's behavior.</typeparam>
+            <param name="result">The result of the experiment.</param>
+            <returns>A task that publishes the results asynchronously.</returns>
+        </member>
+        <member name="T:GitHub.Observation`1">
+            <summary>
+            Defines an observation of an experiment's execution.
+            </summary>
+        </member>
+        <member name="P:GitHub.Observation`1.Duration">
+            <summary>
+            Gets the total time that the experiment behavior ran for.
+            </summary>
+        </member>
+        <member name="P:GitHub.Observation`1.Exception">
+            <summary>
+            Gets an exception if one was thrown from the experiment behavior.
+            </summary>
+        </member>
+        <member name="P:GitHub.Observation`1.Name">
+            <summary>
+            Gets the name of the experiment behavior.
+            </summary>
+        </member>
+        <member name="P:GitHub.Observation`1.Thrown">
+            <summary>
+            Gets whether an exception was observed.
+            </summary>
+        </member>
+        <member name="P:GitHub.Observation`1.Value">
+            <summary>
+            Gets the value of the experiment behavior if successful.
+            </summary>
+        </member>
+        <member name="M:GitHub.Observation`1.EquivalentTo(GitHub.Observation{`0},System.Func{`0,`0,System.Boolean})">
+            <summary>
+            Determines if another <see cref="T:GitHub.Observation`1"/> matches this instance.
+            </summary>
+            <param name="other">The other observation.</param>
+            <param name="comparator">Used to compare two observations</param>
+            <returns>True when the observations values/exceptions match.</returns>
+        </member>
+        <member name="M:GitHub.Observation`1.New(System.String,System.Func{System.Threading.Tasks.Task{`0}},System.Func{`0,`0,System.Boolean})">
+            <summary>
+            Creates a new observation, and runs the experiment.
+            </summary>
+            <param name="name">The name of the observation.</param>
+            <param name="block">The experiment to run.</param>
+            <returns>The observed experiment.</returns>
+        </member>
+        <member name="M:GitHub.Observation`1.Run(System.Func{System.Threading.Tasks.Task{`0}})">
+            <summary>
+            Runs the experiment.
+            </summary>
+        </member>
+        <member name="P:GitHub.Result`1.Candidates">
+            <summary>
+            Gets all of the candidate observations.
+            </summary>
+        </member>
+        <member name="P:GitHub.Result`1.Control">
+            <summary>
+            Gets the controlled observation.
+            </summary>
+        </member>
+        <member name="P:GitHub.Result`1.ExperimentName">
+            <summary>
+            Gets the name of the experiment.
+            </summary>
+        </member>
+        <member name="P:GitHub.Result`1.Matched">
+            <summary>
+            Gets whether the candidate observations matched the controlled observation.
+            </summary>
+        </member>
+        <member name="P:GitHub.Result`1.Mismatched">
+            <summary>
+            Gets whether any of the candidate observations did not match the controlled observation.
+            </summary>
+        </member>
+        <member name="P:GitHub.Result`1.MismatchedObservations">
+            <summary>
+            Gets all of the observations that did not match the controlled observation.
+            </summary>
+        </member>
+        <member name="P:GitHub.Result`1.Observations">
+            <summary>
+            Gets all of the observations.
+            </summary>
+        </member>
+        <member name="P:GitHub.Result`1.IgnoredObservations">
+            <summary>
+            Gets all of the mismatched observations whos values where ignored.
+            </summary>
+        </member>
+        <member name="T:GitHub.Scientist">
+            <summary>
+            A class for carefully refactoring critical paths. Use <see cref="T:GitHub.Scientist"/> 
+            </summary>
+        </member>
+        <member name="M:GitHub.Scientist.Science``1(System.String,System.Action{GitHub.Internals.IExperiment{``0}})">
+            <summary>
+            Conduct a synchronous experiment
+            </summary>
+            <typeparam name="T">The return type of the experiment</typeparam>
+            <param name="name">Name of the experiment</param>
+            <param name="experiment">Experiment callback used to configure the experiment</param>
+            <returns>The value of the experiment's control function.</returns>
+        </member>
+        <member name="M:GitHub.Scientist.ScienceAsync``1(System.String,System.Action{GitHub.Internals.IExperimentAsync{``0}})">
+            <summary>
+            Conduct an asynchronous experiment
+            </summary>
+            <typeparam name="T">The return type of the experiment</typeparam>
+            <param name="name">Name of the experiment</param>
+            <param name="experiment">Experiment callback used to configure the experiment</param>
+            <returns>The value of the experiment's control function.</returns>
+        </member>
+    </members>
+</doc>
