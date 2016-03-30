@@ -1,0 +1,132 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "Raspberry.IO.GeneralPurpose/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Raspberry.System": "2.0.0"
+        },
+        "compile": {
+          "lib/net40/Raspberry.IO.dll": {},
+          "lib/net40/Raspberry.IO.GeneralPurpose.dll": {},
+          "lib/net40/Raspberry.IO.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Raspberry.IO.dll": {},
+          "lib/net40/Raspberry.IO.GeneralPurpose.dll": {},
+          "lib/net40/Raspberry.IO.Interop.dll": {}
+        }
+      },
+      "Raspberry.System/2.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net40/Raspberry.System.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Raspberry.System.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x86": {
+      "Raspberry.IO.GeneralPurpose/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Raspberry.System": "2.0.0"
+        },
+        "compile": {
+          "lib/net40/Raspberry.IO.dll": {},
+          "lib/net40/Raspberry.IO.GeneralPurpose.dll": {},
+          "lib/net40/Raspberry.IO.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Raspberry.IO.dll": {},
+          "lib/net40/Raspberry.IO.GeneralPurpose.dll": {},
+          "lib/net40/Raspberry.IO.Interop.dll": {}
+        }
+      },
+      "Raspberry.System/2.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net40/Raspberry.System.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Raspberry.System.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x64": {
+      "Raspberry.IO.GeneralPurpose/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Raspberry.System": "2.0.0"
+        },
+        "compile": {
+          "lib/net40/Raspberry.IO.dll": {},
+          "lib/net40/Raspberry.IO.GeneralPurpose.dll": {},
+          "lib/net40/Raspberry.IO.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Raspberry.IO.dll": {},
+          "lib/net40/Raspberry.IO.GeneralPurpose.dll": {},
+          "lib/net40/Raspberry.IO.Interop.dll": {}
+        }
+      },
+      "Raspberry.System/2.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net40/Raspberry.System.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Raspberry.System.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Raspberry.IO.GeneralPurpose/2.3.0": {
+      "type": "package",
+      "sha512": "lWe+KVZ9UKhdk6uPC/ckpPQxZqhYR9X4o/DfZScMylzulCEWFN7fE34Ju+8yJ3VKDoKrjDlSlbOZdwLdFwUZTg==",
+      "files": [
+        "lib/net40/Raspberry.IO.dll",
+        "lib/net40/Raspberry.IO.GeneralPurpose.dll",
+        "lib/net40/Raspberry.IO.GeneralPurpose.XML",
+        "lib/net40/Raspberry.IO.Interop.dll",
+        "lib/net40/Raspberry.IO.xml",
+        "Raspberry.IO.GeneralPurpose.2.3.0.nupkg",
+        "Raspberry.IO.GeneralPurpose.2.3.0.nupkg.sha512",
+        "Raspberry.IO.GeneralPurpose.nuspec"
+      ]
+    },
+    "Raspberry.System/2.0.0": {
+      "type": "package",
+      "sha512": "EDmdzYKvjbzq2AVKYm5SHMgEKmtJXMa0G3UEXFrNnxqfGZuNkbOAVN1pZOkqx2TlHiTXHb0fQtxKgXF8wXdWRw==",
+      "files": [
+        "lib/net40/Raspberry.System.dll",
+        "lib/net40/Raspberry.System.xml",
+        "Raspberry.System.2.0.0.nupkg",
+        "Raspberry.System.2.0.0.nupkg.sha512",
+        "Raspberry.System.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [],
+    "DNX,Version=v4.5.1": [
+      "Raspberry.IO.GeneralPurpose >= 2.3.0"
+    ]
+  }
+}

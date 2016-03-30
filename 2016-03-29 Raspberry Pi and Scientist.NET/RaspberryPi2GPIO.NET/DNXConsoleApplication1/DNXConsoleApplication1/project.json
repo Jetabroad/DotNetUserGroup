@@ -1,0 +1,21 @@
+﻿{
+  "version": "1.0.0-*",
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+  },
+
+  "commands": {
+    "DNXConsoleApplication1": "DNXConsoleApplication1"
+  },
+
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "Raspberry.IO.GeneralPurpose": "2.3.0"
+      }
+    }
+  }
+}
