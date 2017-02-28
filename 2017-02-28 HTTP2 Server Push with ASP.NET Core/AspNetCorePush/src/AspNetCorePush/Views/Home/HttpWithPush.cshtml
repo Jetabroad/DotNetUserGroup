@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "HTTP2 Push";
+}
+
+@section scripts {
+    <script http-push src="/lib/jquery/dist/jquery.min.js"></script>
+    <script http-push src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script http-push src="/lib/jquery-validation/dist/additional-methods.min.js"></script>
+    <script http-push src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script http-push src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+}
+@section styles {
+    <link http-push rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link http-push rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-theme.css" />
+    <link http-push rel="stylesheet" href="/css/site.css" />
+}
+
+<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Loaded!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Welcome! If you're on a secure connection (HTTPS), then this page was loaded with HTTP2 Push</p>
+                <a http-push href="/Home/Kittens/">Click for kittens</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+    $(function () {
+        $(".modal").modal('show');
+    })
+</script>

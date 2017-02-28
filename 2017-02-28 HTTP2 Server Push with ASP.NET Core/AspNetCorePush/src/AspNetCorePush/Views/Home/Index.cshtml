@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section scripts {
+    <script>
+        window.addEventListener("load", function () {
+            var isSecure = window.location.protocol === "https:"
+            if(!isSecure) {
+                document.getElementById("secureMessage").textContent = 
+                    "Please view this page over HTTPS to enable HTTP2. This is a browser restriction."
+            }
+        }, false)
+    </script>
+}
+<p>Please browse with caching disabled when comparing speeds.</p>
+<p id="secureMessage"></p>
+
+<p><a asp-action="HttpNoPush">HTTP2 (without push)</a></p>
+<p><a asp-action="HttpWithPush">HTTP2 (with push)</a></p>
