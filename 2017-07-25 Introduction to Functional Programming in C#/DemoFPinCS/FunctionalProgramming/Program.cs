@@ -9,17 +9,15 @@ namespace FunctionalProgramming
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             HigherOrderFunctions.DemoHigherOrderFunctions();
             Imperative.DemoImperative();
 
-
             Honesty.HonestyDemo();
 
-            OpenJaw.OpenJawDemo("MEL-BKK-KUL", "SIN-LON-BKK-MEL");
-            OpenJaw.OpenJawDemo("MEL-BKK-KUL", "SIN-LON-PAR-NYC-MEL");
+            OpenJaw.OpenJawDemo("MEL-BKK-KUL", "SIN-LON-NRT-MEL");
+            OpenJaw.OpenJawDemo("MEL-BKK-PAR", "SIN-LON-BKK-NRT-MEL");
             OpenJaw.OpenJawDemo("MEL-BKK-SYD");
-            OpenJaw.OpenJawDemo("MEL-SYD-BKK-SYD");
+            OpenJaw.OpenJawDemo("MEL-SIN-BKK-SYD");
 
             TestAndAdjustData();
             Immutability.AddAndStore(5);

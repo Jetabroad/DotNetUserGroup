@@ -14,9 +14,12 @@ namespace FunctionalProgramming
         }
         public static IEnumerable<BigInteger> SeqFromTo(BigInteger from, BigInteger to, BigInteger step)
         {
-            return SeqFrom(from, step).TakeWhile(x =>
+            var isIncrement = from < to;
+            var newStep = (isIncrement && step >= 0) || (!isIncrement && step < 0) ? step : -1 * step;
+
+            return SeqFrom(from, newStep).TakeWhile(x =>
             {
-                return step > 0 ? x <= to : x >= to;
+                return isIncrement ? x <= to : x >= to;
             });
         }
         public static IEnumerable<BigInteger> SeqFromTo(BigInteger from, BigInteger to)
@@ -51,13 +54,7 @@ namespace FunctionalProgramming
         /// This is from 
         /// https://fuqua.io/blog/2014/03/haskells-elegant-fibonacci-in-csharp/
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="first"></param>
-        /// <param name="second"></param>
-        /// <returns></returns>
-        public static IEnumerable<T> LazyConcat<T>(
-            this Func<IEnumerable<T>> first,
-            Func<IEnumerable<T>> second)
+        public static IEnumerable<T> LazyConcat<T>(this Func<IEnumerable<T>> first, Func<IEnumerable<T>> second)
         {
             foreach (var item in first())
                 yield return item;

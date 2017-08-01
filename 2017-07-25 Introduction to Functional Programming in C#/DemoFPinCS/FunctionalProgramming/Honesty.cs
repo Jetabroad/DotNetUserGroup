@@ -69,6 +69,7 @@ namespace FunctionalProgramming
             Console.WriteLine(x.Reciprocal());
 
             /*
+            // To write in Imperative Way
             for (BigInteger i = 10; i >= 0; i--)
             {
 

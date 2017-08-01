@@ -14,6 +14,7 @@ namespace FunctionalProgramming
 
         public static void DemoHigherOrderFunctions()
         {
+            Console.WriteLine("Start Functional style Demo");
             someSeq.Take(20)
                    .Print("Take 20: ");
 
@@ -45,11 +46,6 @@ namespace FunctionalProgramming
                         .Count()
                         .Print("Project Euler #29 Alternative");
 
-            //BigInteger number = 123456789;
-
-            //number.NumberFactorize()
-            //      .Print("Factorizing number");
-
         }
 
         public static BigInteger Power(BigInteger n, BigInteger expo)
@@ -59,13 +55,13 @@ namespace FunctionalProgramming
             return n * Power(n, expo - 1);
         }
 
-        public static void Print<T>(this IEnumerable<T> list, string description)
+        public static void Print<T>(this IEnumerable<T> list, string description) 
         {
             Console.WriteLine($"{description}");
             Console.WriteLine($"[{list.JoinToStringWith(",")}]");
             Console.WriteLine();
         }
-        public static void Print<T>(this T number, string description)
+        public static void Print<T>(this T number, string description) 
         {
             Console.WriteLine($"{description}");
             Console.WriteLine($"{number}");
