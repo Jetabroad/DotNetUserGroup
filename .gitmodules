@@ -1,3 +1,7 @@
 [submodule "2017-06-13 Microsoft Identity Framework/IdentityFrameworkDemo"]
 	path = 2017-06-13 Microsoft Identity Framework/IdentityFrameworkDemo
 	url = https://github.com/dewnoibkk/identityframework-demo.git
+[submodule "2017-11-21 Monads in CSharp/MonadsInCSharp"]
+	path = 2017-11-21 Monads in CSharp/MonadsInCSharp
+	url = https://github.com/waf/MonadsInCSharp.git
+	branch = master
