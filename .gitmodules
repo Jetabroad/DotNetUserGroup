@@ -5,3 +5,6 @@
 	path = 2017-11-21 Monads in CSharp/MonadsInCSharp
 	url = https://github.com/waf/MonadsInCSharp.git
 	branch = master
+[submodule "2018-02-06 Building SPAs using ASP NET Core and ReactJS/ReactJSASPNETCore"]
+	path = 2018-02-06 Building SPAs using ASP NET Core and ReactJS/ReactJSASPNETCore
+	url = https://github.com/kidchenko/asp-net-core-react.git
