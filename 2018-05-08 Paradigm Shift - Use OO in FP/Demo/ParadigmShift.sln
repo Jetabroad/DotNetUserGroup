@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadigmShiftCS", "ParadigmShiftCS\ParadigmShiftCS.csproj", "{968FD122-66B0-43CC-908B-DC6697E9B7CA}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParadigmShiftFS", "ParadigmShiftFS\ParadigmShiftFS.fsproj", "{F29F7F74-5949-4CB5-AD5B-4971DBF214DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{968FD122-66B0-43CC-908B-DC6697E9B7CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968FD122-66B0-43CC-908B-DC6697E9B7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968FD122-66B0-43CC-908B-DC6697E9B7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968FD122-66B0-43CC-908B-DC6697E9B7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F29F7F74-5949-4CB5-AD5B-4971DBF214DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29F7F74-5949-4CB5-AD5B-4971DBF214DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29F7F74-5949-4CB5-AD5B-4971DBF214DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29F7F74-5949-4CB5-AD5B-4971DBF214DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65321F68-309C-4EA8-A9A3-4A11717D61EC}
+	EndGlobalSection
+EndGlobal
